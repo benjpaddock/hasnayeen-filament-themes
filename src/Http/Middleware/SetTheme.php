@@ -35,16 +35,15 @@ class SetTheme
 
         /**
          * Important for Laravel Octane!
-         * 
+         *
          * Check if item already exists before adding it
          * to the menu items.
          */
-        if(!isset($panel->getUserMenuItems()[__('themes::themes.themes')])){
+        if (! isset($panel->getUserMenuItems()[__('themes::themes.themes')])) {
             $panel->userMenuItems(
                 ThemesPlugin::canView() ?
                     [
-                        __('themes::themes.themes') =>
-                        MenuItem::make('Themes')
+                        __('themes::themes.themes') => MenuItem::make('Themes')
                             ->label(__('themes::themes.themes'))
                             ->icon(config('themes.icon'))
                             ->url(ThemesPage::getUrl()),
